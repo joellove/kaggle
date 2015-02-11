@@ -75,6 +75,7 @@ def parse(src_dir, target_dir):
                     elif(acceleration == 0):
                         accel_property = 3
 
+                    # 운전자ID, 주행ID, 시퀀스, X, Y, 이동거리, 속도, 가속도, 가속도 구분
                     record = driver_name + "," +  trip_name + "," + str(seq) + "," +  line.strip() + "," +str(distance) + ","  + str(velocity) + "," + str(acceleration) + "," + str(accel_property) + "\n"
                     output_file.write(record)
 
