@@ -107,10 +107,11 @@ def parse(src_dir, target_dir):
 
 
 if __name__ == "__main__":
-    # src_dir = r"D:\10.study\Kaggle\drivers_telematics_analysis\drivers"
-    #target_dir = r"D:\10.study\Kaggle\drivers_telematics_analysis\output"
-    dir_path = sys.argv
-    parse(dir_path[1], dir_path[2])
+    src_dir = r"D:\10.study\Kaggle\drivers_telematics_analysis\test"
+    target_dir = r"D:\10.study\Kaggle\drivers_telematics_analysis\output_test"
+    #dir_path = sys.argv
+    #parse(dir_path[1], dir_path[2])
+    parse(src_dir, target_dir)
 
 
 
