@@ -6,8 +6,7 @@
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-create database if not exists kaggle
-;
+create database if not exists kaggle;
 
 drop table kaggle.driver_telematics_source;
 create table kaggle.driver_telematics_source
@@ -204,18 +203,21 @@ from
 where
     a.user_id = b.user_id and a.trip_id = b.trip_id and a.accel_type_seq = b.accel_type_seq
 
--- 구간별 row_number  파생
+-- 구간별 내부 순서  파생
 drop table if exists kaggle.driver_fixed_speed4;
 create table kaggle.driver_fixed_speed4
 AS
+SELECT
+    *
+    , row_number() over(partition by user_id, trip_id, accel_type_seq order by seq_num) as accel_type_num
+from kaggle.driver_fixed_speed3
+;
+
 select
     *
-    , row_number() over(partition by user_id, trip_id, accel_type order by seq_num) as accel_type_num
-from kaggle.driver_fixed_speed3
+from kaggle.driver_fixed_speed4
 where user_id = 1 and trip_id = 1
-
-
-row_number() over(order by x, property) as row_number
+order by user_id, trip_id, seq_num
 
 
 -- 가속/감속/정속 구간별 요약 테이블 생성
