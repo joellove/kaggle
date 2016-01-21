@@ -4,7 +4,5 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 2.7.11 (D:\02.devkit\Anaconda2\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="ryan_kaggle" />
-    <orderEntry type="module" module-name="pytest" />
   </component>
 </module>

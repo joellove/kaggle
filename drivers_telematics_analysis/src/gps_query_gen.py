@@ -17,7 +17,7 @@ def parse(src_file):
         loc = line.split(',')
         sql += 'when latitude_fixed >= '  + str(float(loc[1]) - 0.0001) + ' and latitude_fixed <='   + str(float(loc[1]) + 0.0001) + ' and longitude_fixed >=' + str( float(loc[2]) - 0.0001) + ' and longitude_fixed <= ' + str(float(loc[2]) + 0.0001) + " then '" + loc[0].strip() + "' \n"
     sql += 'end as point'
-    print(sql)
+    print(sql),
 
 if __name__ == "__main__":
     src_file = r"D:\svc_touchpoint_seoul.code.latitude.longitude.csv"
